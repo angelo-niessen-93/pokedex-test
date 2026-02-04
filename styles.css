@@ -171,6 +171,18 @@ h1 {
     image-rendering: pixelated;
 }
 
+.card-abilities {
+    width: 100%;
+    font-size: 10px;
+}
+
+.card-stats {
+    width: 100%;
+    font-size: 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .type {
     display: inline-block;
     padding: 4px 8px;
@@ -270,11 +282,13 @@ h1 {
 .dpad.left {
     margin-left: 13px;
     color: transparent;
+    z-index: 10000;
 }
 
 .dpad.right {
     margin-left: 6px;
     color: transparent;
+    z-index: 10000;
 }
 
 .button-nav {
@@ -288,6 +302,7 @@ h1 {
 
 .close-button {
     position: relative;
+    z-index: 10000;
 }
 
 .close {
@@ -302,6 +317,18 @@ h1 {
     height: 20px;
     cursor: pointer;
     z-index: 10;
+}
+
+.states {
+    z-index: 10000;
+    display: flex;
+    left: 7px;
+    position: absolute;
+    flex-direction: column;
+    font-size: 5px;
+    bottom: 91px;
+    line-height: 0;
+    width: 100%;
 }
 
 @media (max-width: 320px) {
@@ -344,93 +371,4 @@ h1 {
         min-height: 320px;
         object-fit: contain;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fire {
-    background-color: #f08030;
-}
-
-.water {
-    background-color: #6890f0;
-}
-
-.grass {
-    background-color: #78c850;
-}
-
-.electric {
-    background-color: #f8d030;
-    color: black;
-}
-
-.ice {
-    background-color: #98d8d8;
-    color: black;
-}
-
-.fighting {
-    background-color: #c03028;
-}
-
-.poison {
-    background-color: #a040a0;
-}
-
-.ground {
-    background-color: #e0c068;
-    color: black;
-}
-
-.flying {
-    background-color: #a890f0;
-}
-
-.psychic {
-    background-color: #f85888;
-}
-
-.bug {
-    background-color: #a8b820;
-}
-
-.rock {
-    background-color: #b8a038;
-}
-
-.ghost {
-    background-color: #705898;
-}
-
-.dragon {
-    background-color: #7038f8;
-}
-
-.dark {
-    background-color: #705848;
-}
-
-.steel {
-    background-color: #b8b8d0;
-    color: black;
-}
-
-.fairy {
-    background-color: #ee99ac;
-    color: black;
 }

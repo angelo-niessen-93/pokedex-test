@@ -31,6 +31,8 @@ async function loadPokemon(pokemon) {
       name: a.ability.name,
       hidden: a.is_hidden,
     })),
+    height: data.height / 10,
+    weight: data.weight / 10  
   };
 }
 
@@ -64,8 +66,13 @@ function renderPokemons(pokemons) {
         <img src="${pokemon.image}" alt="${pokemon.name}">
       </div>
       <div class="card-abilities">
-        <p>Fähigkeiten: ${pokemon.abilities.map((a) => (a.hidden ? a.name + " (hidden)" : a.name)).join(", ")}</p>
-      </div>`;
+        <p>Skills: ${pokemon.abilities.map((a) => (a.hidden ? a.name + " (hidden)" : a.name)).join(", ")}</p>
+      </div>
+       <div class="card-stats">
+      <p>Height: ${pokemon.height} m</p>
+      <p>Weight: ${pokemon.weight} kg</p>
+  </div>
+      `;
     pokedex.appendChild(card);
     card.addEventListener("click", () => {
       currentIndex = allPokemons.indexOf(pokemon);
@@ -94,6 +101,11 @@ function openModal(pokemon) {
 function updateModal(pokemon) {
   document.getElementById("modal-image").src = pokemon.image;
   document.getElementById("modal-name").textContent = pokemon.name;
+  document.getElementById("modal-abilities").textContent = ("Skills:") +  pokemon.abilities
+   .map(a => a.hidden ? a.name : a.name)
+  .join(", ");
+  document.getElementById("modal-height").textContent = ("Height:") + pokemon.height+ "m";
+  document.getElementById("modal-weight").textContent = ("Weight:") +  pokemon.weight+ "kg";
 }
 
 document.getElementById("prev").addEventListener("click", () => {
