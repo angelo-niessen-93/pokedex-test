@@ -238,7 +238,6 @@ h1 {
     max-width: 90vw;
     max-height: 90vh;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -308,7 +307,7 @@ h1 {
 .close {
     position: absolute;
     top: 105px;
-    right: 28px;
+    right: 110px;
     background: rgba(255, 0, 0, 0);
     border: none;
     color: white;
@@ -320,15 +319,15 @@ h1 {
 }
 
 .states {
+    position: relative;
+    bottom: -130px;
+    left: -145px;
     z-index: 10000;
     display: flex;
-    left: 7px;
-    position: absolute;
-    flex-direction: column;
     font-size: 5px;
-    bottom: 91px;
-    line-height: 0;
-    width: 100%;
+    line-height: 1;
+    width: auto;
+    gap: 10px;
 }
 
 @media (max-width: 320px) {
