@@ -1,16 +1,23 @@
 const pokedex = document.getElementById("pokedex");
 const video = document.getElementById("loadingVideo");
 const loader = document.getElementById("loader");
-const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0";
+const limit = 20;
+
+let offset = 0;
 
 let allPokemons = [];
 let currentIndex = 0;
 
 async function fetchData() {
-  const response = await fetch(apiUrl);
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
+  );
   const data = await response.json();
-  allPokemons = await Promise.all(data.results.map(loadPokemon));
-  renderPokemons(allPokemons);
+
+  const newPokemons = await Promise.all(data.results.map(loadPokemon));
+  allPokemons.push(...newPokemons);
+
+  renderPokemons(newPokemons);
 }
 
 async function loadPokemon(pokemon) {

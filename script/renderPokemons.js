@@ -1,5 +1,4 @@
 function renderPokemons(pokemons) {
-  pokedex.innerHTML = "";
   const availableFrames = [
     "fire",
     "electric",
@@ -19,13 +18,18 @@ function renderPokemons(pokemons) {
 
     pokedex.innerHTML += pokemonCardTemplate(pokemon, type);
   });
-
-  pokedex.addEventListener("click", (event) => {
-    const card = event.target.closest(".pokemon-card");
-    if (!card) return;
-
-    const index = Array.from(pokedex.children).indexOf(card);
-    currentIndex = index;
-    openModal(pokemons[index]);
-  });
 }
+
+pokedex.addEventListener("click", (event) => {
+  const card = event.target.closest(".pokemon-card");
+  if (!card) return;
+
+  const index = Array.from(pokedex.children).indexOf(card);
+  currentIndex = index;
+  openModal(allPokemons[index]);
+});
+
+document.getElementById("loadMore").addEventListener("click", () => {
+  offset += limit;
+  fetchData();
+});
