@@ -4,7 +4,6 @@ const loader = document.getElementById("loader");
 const limit = 20;
 
 let offset = 0;
-
 let allPokemons = [];
 let currentIndex = 0;
 

@@ -17,6 +17,7 @@ function updateModal(pokemon) {
 }
 
 function openModal(pokemon) {
+  currentIndex = allPokemons.findIndex(p => p.name === pokemon.name);
   modal.classList.remove("hidden");
   updateModal(pokemon);
 }

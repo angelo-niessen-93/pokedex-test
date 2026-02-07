@@ -24,10 +24,16 @@ pokedex.addEventListener("click", (event) => {
   const card = event.target.closest(".pokemon-card");
   if (!card) return;
 
-  const index = Array.from(pokedex.children).indexOf(card);
+  const name = card.dataset.name;
+
+  const index = allPokemons.findIndex(
+    (p) => p.name === name
+  );
+
   currentIndex = index;
   openModal(allPokemons[index]);
 });
+
 
 document.getElementById("loadMore").addEventListener("click", () => {
   offset += limit;

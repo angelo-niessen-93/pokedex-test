@@ -1,6 +1,8 @@
 function pokemonCardTemplate(pokemon, type) {
   return `
-    <div class="pokemon-card" style="background-image: url('assets/png/${type}.png')">
+    <div class="pokemon-card"
+         data-name="${pokemon.name}"
+         style="background-image: url('assets/png/${type}.png')">
       <div class="card-header">
         <h3>${pokemon.name}</h3>
         <p class="card-hp">HP: ${pokemon.hp}</p>
