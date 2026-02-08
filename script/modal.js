@@ -17,7 +17,7 @@ function updateModal(pokemon) {
 }
 
 function openModal(pokemon) {
-  currentIndex = allPokemons.findIndex(p => p.name === pokemon.name);
+  currentIndex = allPokemons.findIndex((p) => p.name === pokemon.name);
   modal.classList.remove("hidden");
   updateModal(pokemon);
 }
@@ -37,3 +37,27 @@ nextBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", closeModal);
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (modal.classList.contains("hidden")) return;
+
+  if (event.key === "ArrowLeft") {
+    currentIndex = (currentIndex - 1 + allPokemons.length) % allPokemons.length;
+    updateModal(allPokemons[currentIndex]);
+  }
+
+  if (event.key === "ArrowRight") {
+    currentIndex = (currentIndex + 1) % allPokemons.length;
+    updateModal(allPokemons[currentIndex]);
+  }
+
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
