@@ -330,9 +330,9 @@ h1 {
 }
 
 #loadMore {
-  position: relative;
-  z-index: 1;
-  border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
     border: 2px solid;
     background: linear-gradient(to bottom, #f44336, #d32f2f);
     color: white;
@@ -341,7 +341,7 @@ h1 {
 }
 
 #loadMore:hover {
-     transform: translateY(-2px);
+    transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
